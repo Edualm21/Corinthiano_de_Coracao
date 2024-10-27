@@ -3,11 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="css/style_login.css">
+    <script src="js/login.js"></script>
+    <title>Corinthiano de Coração</title>
 </head>
 <body>
-    <div class="caixa-login">
-        <span>Login</span>
+    <header class="header">
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <img src="assets/imgs/Escudo_Corinthians.png" alt="">
+                </div>
+                <div class="opcoes">
+                    <a class="opcao" href="index.html">Home</a>
+                    <a class="opcao" href="#sobre-mim">Sobre Mim</a>
+                    <a class="opcao" href="#Corinthians">História do Corinthians</a>
+                </div>
+            </div>
+            <div class="botoes">
+                <button onclick="window.location.href='tela-login.html'">Login</button>
+                <button onclick="window.location.href='tela-cadastro.html'">Cadastro</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="login">
+        <img src="assets/videos/beijando-a-camisa-renato-augusto.gif">
+        <h2>Login</h2>
+        <div class="conteudo_login">
+            Usuário ou email: <br>
+                <input type="text" id="email_input" placeholder="Informe seu usuário"> <br>
+            Senha: <br>
+                <input type="text" id="senha_input" placeholder="Informe sua senha"> <br>
+            <button class="botao" onclick="fazerLogin()">
+                Login
+            </button>
+            <div class="recuperar_senha" onclick="recuperarSenha()">
+                Redefinir senha
+            </div>
+            <button class="nova_conta" onclick="fazerCadastro()">
+                Criar nova conta
+            </button>
+        </div>
     </div>
 </body>
 </html>
+
+   

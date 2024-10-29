@@ -1,5 +1,6 @@
 body{
     margin: 0;
+    overflow-x: hidden;
 }
 
 html{
@@ -92,7 +93,7 @@ html{
     font-size: 200px;
     position: relative;
     transition: all ease-in-out 0.8s;
-    transition-delay: 0.8s;
+    transition-delay: 1.5s;
     padding-right: 30%;
     padding-top: 10%;
     color: antiquewhite;
@@ -122,5 +123,24 @@ html{
     padding-right: 10px;
 }
 
+.container_2{
+    width: 100%;
+    background: 
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), /* Camada escura */
+        url('../assets/imgs/Foto_Basilio.png') no-repeat center;
+    background-size: cover;
+    height: 90%;
+    opacity: 1;
+}
 
+
+
+.sobre_mim{
+    color: antiquewhite;
+    font-family: 'Times New Roman', Times, serif;
+    display: flex;
+    align-items: flex-end;
+    justify-content: end;
+    padding-top: 10%;
+}
 

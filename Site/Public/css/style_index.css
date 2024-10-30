@@ -142,11 +142,25 @@ html{
     align-items: flex-end;
     justify-content: end;
     padding-top: 10%;
+    text-align: justify;
 }
 
-.fotos{
+
+.carrosel{
     width: 35%;
     height: 35%;
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
     margin-left: 8%;    
+}
+
+.container_carrosel{
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    transform: translateX(0);
+}
+
+img{
+    object-fit: cover;
+    width: 35%;
+    height: 35%;
 }

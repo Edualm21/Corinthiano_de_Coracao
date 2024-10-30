@@ -81,8 +81,8 @@ html{
     font-family: inherit;
     font-size: 200px;
     position: relative;
-    transition: all ease-in-out 0.9s;
-    transition-delay: 0.8s;
+    transition: all ease-in-out 0.2s;
+    transition-delay: 0.2s;
     padding-left: 30%;
     padding-top: 10%;
     color: antiquewhite;
@@ -92,8 +92,8 @@ html{
     font-family: inherit;
     font-size: 200px;
     position: relative;
-    transition: all ease-in-out 0.8s;
-    transition-delay: 1.5s;
+    transition: all ease-in-out 0.2s;
+    transition-delay: 0.2s;
     padding-right: 30%;
     padding-top: 10%;
     color: antiquewhite;
@@ -101,12 +101,12 @@ html{
 
   .container:hover .titulo1{
     left: -20%;
-    transition: all ease-in-out 0.8s;
+    transition: all ease-in-out 0.2s;
   }
   
   .container:hover .titulo2{
     right: -20%;
-    transition: all ease-in-out 0.8s;
+    transition: all ease-in-out 0.2s;
   }
 
 
@@ -144,3 +144,9 @@ html{
     padding-top: 10%;
 }
 
+.fotos{
+    width: 35%;
+    height: 35%;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    margin-left: 8%;    
+}

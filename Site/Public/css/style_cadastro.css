@@ -97,11 +97,11 @@ html{
     margin-left: 80vh;
     font-size: 30px;
     color: antiquewhite;
-    
+    padding-top: 15%;
     
 }
 
-.conteudo_cadatro input{
+.conteudo_cadastro input{
     width: 25vw;
     height: 5vh;
     border: 2px solid #dce6dd;
@@ -111,4 +111,23 @@ html{
 
 .conteudo_cadastro input::placeholder{
     color: black;
+}
+
+.botao{
+    width: 25vw;
+    height: 8vh;
+    background-color: #000000;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    margin-left: 58%;
+    margin-top: 3%;
+}
+
+.botao:hover{
+    transform: scale(1.10);
 }

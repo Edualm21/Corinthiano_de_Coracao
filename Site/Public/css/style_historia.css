@@ -76,3 +76,37 @@ html{
     transform: scale(1.2);
     cursor: pointer;
 }
+
+.banner{
+    background: 
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), /* Camada escura */
+    url('../assets/imgs/fundadores_corinthians.png') no-repeat center;
+    opacity: 1;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: space-between;
+    width: 98vw;
+    height: 92vh;
+    padding-top: 60px;
+    padding-right: 10px;
+}
+
+.titulo{
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    justify-items: center;
+    padding-left: 10%;
+    color: antiquewhite;
+    font-size: 60px;
+    font-family: inherit;
+    margin-top: 12%;
+}
+
+.titulo h2{ 
+    color: antiquewhite;
+    font-size: 40px;
+    font-family: unset;
+}

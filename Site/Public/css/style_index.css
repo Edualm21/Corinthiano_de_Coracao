@@ -1,3 +1,8 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
 body{
     margin: 0;
     overflow-x: hidden;
@@ -146,29 +151,52 @@ html{
 }
 
 
-.carrosel{
-    z-index: 1;
-    padding-left: 200px;
+
+
+.slider {
+    position: relative;
+    width: 100%;
+    max-width: 300px; /* Ajuste conforme necessário */
+    overflow: hidden;
+    margin: auto;
+    height: 300px; /* Centraliza o slider */
+    margin-left: 50px;
+}
+
+.slider-container {
     display: flex;
-    gap: 20px;
-    width: 50px;
-    overflow-x: scroll;
+    transition: transform 0.5s ease;
 }
 
-.card{
+.card {
+    min-width: 100%; /* Cada cartão ocupa 100% da largura do slider */
     box-sizing: border-box;
-    padding: 20px 30px;
-    flex-shrink: 0; 
-    width: 300px;
-    height: 300px;
-    border-radius: 14px;
-    
 }
 
-.card img{
-    width: 300px;
-    height: 300px;
+.card img {
+    width: 100%; /* Ajusta a imagem para preencher o cartão */
+    height: auto; /* Mantém a proporção */
 }
+
+button.prev, button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+button.prev {
+    left: 10px;
+}
+
+button.next {
+    right: 10px;
+}
+
+    
 
 .container_3 {
     width: 100%;

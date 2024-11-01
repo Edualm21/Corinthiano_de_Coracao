@@ -1,17 +1,18 @@
-const imgs = document.getElementById("img")
-const img = document.querySelectorAll("#img img")
+let currentIndex = 0;
 
-let index = 0
+function moveSlide(direction) {
+    const slides = document.querySelectorAll('.card');
+    const totalSlides = slides.length;
 
-function carrosel(){
-    
-    index++
+    currentIndex += direction;
 
-    if(index > img.length - 1){
-        index = 0
+    if (currentIndex < 0) {
+        currentIndex = totalSlides - 1; // Volta para o último slide
+    } else if (currentIndex >= totalSlides) {
+        currentIndex = 0; // Volta para o primeiro slide
     }
 
-    imgs.style.transform = `translateX(${-index * 35}%)`
+    const sliderContainer = document.querySelector('.slider-container');
+    const offset = -currentIndex * 100; // Calcula o deslocamento
+    sliderContainer.style.transform = `translateX(${offset}%)`;
 }
-
-setInterval(carrosel, 1800)

@@ -1,5 +1,6 @@
 body{
     margin: 0;
+    overflow-x: hidden;
 }
 
 html{
@@ -74,60 +75,4 @@ html{
 .botoes button:hover{
     transform: scale(1.2);
     cursor: pointer;
-}
-
-.cadastro img {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
-    filter: brightness(50%);
-    margin: 0;
-    top: 0;
-}
-
-.conteudo_cadastro{
-    display: flex;
-    justify-content: space-between;
-    font-family: Arial, Helvetica, sans-serif;
-    align-items: center;
-    flex-direction: column;
-    margin-top: 8vh;
-    margin-left: 80vh;
-    font-size: 30px;
-    color: antiquewhite;
-    padding-top: 15%;
-}
-
-.conteudo_cadastro input{
-    width: 25vw;
-    height: 5vh;
-    border: 2px solid #dce6dd;
-    border-radius: 10px;
-    text-align: center;
-    border-color: black;
-}
-
-.conteudo_cadastro input::placeholder{
-    color: black;
-}
-
-.botao{
-    width: 25vw;
-    height: 8vh;
-    background-color: #000000;
-    color: white;
-    font-size: 18px;
-    font-weight: bold;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: transform 0.3s ease, background-color 0.3s ease;
-    margin-left: 58%;
-    margin-top: 3%;
-}
-
-.botao:hover{
-    transform: scale(1.10);
 }

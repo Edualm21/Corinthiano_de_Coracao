@@ -1,5 +1,5 @@
 function fazerLogin(){
-    window.location.href = "index.html"
+    window.location.href = "dashboards.html"
 }
 
 function fazerCadastro(){

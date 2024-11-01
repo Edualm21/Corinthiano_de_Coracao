@@ -6,6 +6,7 @@
     <title>Corinthiano de Coração</title>
     <link rel="icon" type="image/png" href="assets/imgs/escudo_1910.png">
     <link rel="stylesheet" href="css/style_index.css">
+    <script src="js/index.js"></script>
 </head>
 <body>
 
@@ -18,7 +19,7 @@
                 <div class="opcoes">
                     <a class="opcao" href="index.html">Home</a>
                     <a class="opcao" href="#sobre_mim">Sobre Mim</a>
-                    <a class="opcao" href="#Corinthians">História do Corinthians</a>
+                    <a class="opcao" href="historia_corinthians.html">História do Corinthians</a>
                 </div>
             </div>
             <div class="botoes">
@@ -48,41 +49,47 @@
                 Magnam ut enim vero temporibus quae ab dolor facere quasi architecto voluptatem molestiae numquam sit, nulla maiores? <br>
                 Ducimus tempora facere veritatis neque! 
         </div>
-        <div class="carrosel">
+        <div class="slider">
+            <div class="slider-container">
                 <div class="card">
-                    <img src="assets/imgs/CORINTHIANSxgalo.jpg">
+                    <img src="assets/imgs/CORINTHIANSxgalo.jpg" alt="Imagem 1">
                 </div>
                 <div class="card">
-                    <img src="assets/imgs/EuEMeuPai2.jpg">
+                    <img src="assets/imgs/EuEMeuPai2.jpg" alt="Imagem 2">
                 </div>
                 <div class="card">
-                    <img src="assets/imgs/EuNaMotinha.jpg"> 
+                    <img src="assets/imgs/EuNaMotinha.jpg" alt="Imagem 3"> 
                 </div>
                 <div class="card">
-                <img src="assets/imgs/EuEMinhaMae.jpg">
+                    <img src="assets/imgs/EuEMinhaMae.jpg" alt="Imagem 4">
                 </div>
                 <div class="card">
-                <img src="assets/imgs/euNaCachoeira.JPG">
+                    <img src="assets/imgs/euNaCachoeira.JPG" alt="Imagem 5">
                 </div>
                 <div class="card">
-                <img src="assets/imgs/CORINTHIANSxjuventude.jpg">
+                    <img src="assets/imgs/CORINTHIANSxjuventude.jpg" alt="Imagem 6">
                 </div>
                 <div class="card">
-                <img src="assets/imgs/bandeirao_gavioes.jpg">
+                    <img src="assets/imgs/bandeirao_gavioes.jpg" alt="Imagem 7">
                 </div>
                 <div class="card">
-                <img src="assets/imgs/beijandoATaca.JPG">
+                    <img src="assets/imgs/beijandoATaca.JPG" alt="Imagem 8">
                 </div>
                 <div class="card">
-                <img src="assets/imgs/Capitao.JPG">
+                    <img src="assets/imgs/Capitao.JPG" alt="Imagem 9">
                 </div>
                 <div class="card">
-                <img src="assets/imgs/chuteira.JPG">
+                    <img src="assets/imgs/chuteira.JPG" alt="Imagem 10">
                 </div>
                 <div class="card">
-                <img src="assets/imgs/CORINTHIANSxporcus_aquecimento.jpg">
+                    <img src="assets/imgs/CORINTHIANSxporcus_aquecimento.jpg" alt="Imagem 11">
                 </div>
+            </div>
+            <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+            <button class="next" onclick="moveSlide(1)">&#10095;</button>
         </div>
+        
+        
     </div>
     <div class="container_3">
         <div class="card_missao">

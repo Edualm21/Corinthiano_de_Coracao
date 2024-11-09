@@ -1,5 +1,5 @@
 function fazerLogin(){
-    window.location.href = "dashboards.html"
+    window.location.href = "quiz.html"
 }
 
 function fazerCadastro(){

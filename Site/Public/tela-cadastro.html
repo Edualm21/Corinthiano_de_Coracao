@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style_cadastro.css">
+    <script src="js/cadastro.js"></script>
     <title>Corinthiano de Coração</title>
 </head>
 <body>
@@ -16,7 +17,7 @@
                 <div class="opcoes">
                     <a class="opcao" href="index.html">Home</a>
                     <a class="opcao" href="#sobre-mim">Sobre Mim</a>
-                    <a class="opcao" href="#Corinthians">História do Corinthians</a>
+                    <a class="opcao" href="historia_corinthians.html">História do Corinthians</a>
                 </div>
             </div>
             <div class="botoes">
@@ -25,6 +26,9 @@
             </div>
         </div>
     </header>
+    <div class="card_erro" id="cardErro">
+        <span id="mensagem_erro"></span>
+      </div>
     <div class="cadastro">
         <img src="assets/videos/beijando-a-camisa-renato-augusto.gif">
         <div class="conteudo_cadastro">
@@ -39,13 +43,9 @@
             Informe seu telefone:
                 <input id="input_telefone">
         </div>
-        <button class="botao">
+        <button class="botao" onclick="cadastrar()">
             Cadastrar
         </button>
-        <!-- <div class="conteudo_cadastro2">
-            Data de nascimento:
-                <input id="input_dtNasc">
-        </div> -->
     </div>
 </body>
 </html>

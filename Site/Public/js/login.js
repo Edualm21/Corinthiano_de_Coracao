@@ -3,5 +3,5 @@ function fazerLogin(){
 }
 
 function fazerCadastro(){
-    window.location.href = "tela-cadastro.html"
+    window.location.href = "cadastro.html"
 }

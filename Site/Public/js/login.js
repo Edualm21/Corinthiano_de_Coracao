@@ -5,3 +5,4 @@ function fazerLogin(){
 function fazerCadastro(){
     window.location.href = "cadastro.html"
 }
+

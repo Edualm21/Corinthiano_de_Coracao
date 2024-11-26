@@ -1,66 +1,79 @@
+var maiuscula = /[A-Z]/
+var minuscula = /[a-z]/
+var simbolo = /[!@#$]/
+var numerico = /[0-9]/
+var senhaForte = false
+
 function cadastrar() {
-    const nome = document.getElementById("input_nome");
-    console.log(nome);
-    const email = document.getElementById("input_email");
-    const senha = document.getElementById("input_senha");
-    const confirmarSenha = document.getElementById("input_confirma_senha");
 
-    if (nome === "") {
-        cardErro.style.display = "block";
-        mensagem_erro.innerHTML = `Informe seu nome para continuar`;
-        return;
-    }
+//Recupere o valor da nova input pelo nome do id
+// Agora vá para o método fetch logo abaixo
+var nomeVar = input_nome.value;
+var emailVar = input_email.value;
+var senhaVar = input_senha.value;
+var confirmacaoSenhaVar = input_confirmar_senha.value;
+var idUsuarioVincular
 
-    if (email === "") {
-        cardErro.style.display = "block";
-        mensagem_erro.innerHTML = `Preencha o email para continuar`;
-        return;
-    }
+var temMaiuscula = maiuscula.test(senhaVar)
+var temMinuscula = minuscula.test(senhaVar)
+var temSimbolo = simbolo.test(senhaVar)
+var temNumerico = numerico.test(senhaVar)
+var temTamanho = senhaVar.length >= 8
 
-    if (senha === "") {
-        cardErro.style.display = "block";
-        mensagem_erro.innerHTML = `Insira sua senha para continuar`;
-        return;
-    }
+senhaForte = temMaiuscula &&
+             temMinuscula &&
+             temSimbolo   &&
+             temNumerico  &&
+             temTamanho
 
-    if (confirmarSenha === "") {
-        cardErro.style.display = "block";
-        mensagem_erro.innerHTML = `Confirme sua senha para continuar`;
-        return;
-    }
+// Verificando se há algum campo em branco
+if (nomeVar == "" ||
+    emailVar == "" ||
+    senhaVar == "" ||
+    confirmacaoSenhaVar == ""){
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Preencha todos campos para prosseguir!", 
+        color: "#50080b"
+      });
+} else if (senhaVar != confirmacaoSenhaVar) {
+  Swal.fire({
+    icon: "error",
+    title: "Oops...",
+    text: "Senhas digitadas não conferem!",
+    color: "#50080b"
+  });
+  
+} else if (senhaForte == false){
+  Swal.fire({
+    icon: "error",
+    title: "Oops...",
+    text: "Senha fraca, necessita de 8 caracteres, 1 maiúscula, 1 minuscula, um número e um caracter especial!",
+    color: "#50080b"
+  });
+} else {
+    Swal.fire({
+    title: "Sucesso!",
+    text: "Usuário cadastrado!!",
+    icon: "success"
+    });
 
-    if (nome.length < 2) {
-        cardErro.style.display = "block";
-        mensagem_erro.innerHTML = `O nome deve ter mais de um caractere`;
-        return;
-    }
+     window.location.href = "login.html"
 
-    if (email.indexOf("@") === -1 || email.indexOf(".") === -1) {
-        cardErro.style.display = "block";
-        mensagem_erro.innerHTML = `Preencha o email corretamente para continuar`;
-        return;
-    }
-
-    if (senha.length < 8) {
-        cardErro.style.display = "block";
-        mensagem_erro.innerHTML = `Sua senha deve conter no mínimo 8 caracteres`;
-        return;
-    }
-
-    if (confirmarSenha !== senha) {
-        cardErro.style.display = "block";
-        mensagem_erro.innerHTML = `As senhas não coincidem`;
-        return;
-    }
-}
-
-function finalizarAguardar(texto) {
-    var divAguardar = document.getElementById("div_aguardar");
-    divAguardar.style.display = "none";
-
-    var divErrosLogin = document.getElementById("div_erros_login");
-    if (texto) {
-        divErrosLogin.style.display = "flex";
-        divErrosLogin.innerHTML = texto;
-    }
+fetch("/usuarios/cadastrar", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({
+    // crie um atributo que recebe o valor recuperado aqui
+    // Agora vá para o arquivo routes/usuario.js
+    nomeServer: nomeVar,
+    emailServer: emailVar,
+    senhaServer: senhaVar,
+    idUsuarioServer: idUsuarioVincular
+  }),
+})
+}   
 }

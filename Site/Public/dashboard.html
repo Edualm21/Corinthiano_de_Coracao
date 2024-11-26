@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/dash.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="js/sessao.js"></script>
+
 </head>
 
 <body>
@@ -57,8 +58,8 @@
 <script>
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
-     // Exibir a última pontuação do usuário
-     const pontuacao = sessionStorage.getItem('Pontos');
+         // Exibir a última pontuação do usuário
+         const pontuacao = sessionStorage.getItem('Pontos');
   if (pontuacao == null) {
     document.getElementById('ultimaPontuacao').innerHTML = '0';
   } else {

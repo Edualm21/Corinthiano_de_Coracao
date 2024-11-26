@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/quiz.css">
     <script src="js/quiz.js" async></script>
+    <script src="js/sessao.js"></script>
     <title>Corinthiano de Coração</title>
 </head>
 <body>
@@ -19,20 +20,10 @@
           <div class="btn-nav">
             <h3>Quiz</h3>
           </div>
-    
-          <!-- <div class="btn-nav-white">
-            <a href="cards.html">
-              <h3>Visão Geral</h3>
-            </a>
-          </div> -->
-    
-    
-    
-          <!-- <div class="btn-nav-white">
-            <a href="mural.html">
-              <h3>Mural de Histórias</h3>
-            </a>
-          </div> -->
+
+          <div class="btn-nav" onclick="irParaDash()">
+            <h3>Dashboard</h3>
+          </div>
     
           <div class="btn-logout" onclick="limparSessao()">
             <h3>Sair</h3>
@@ -58,3 +49,7 @@
     </div>
 </body>
 </html>
+
+<script>
+  b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+</script>

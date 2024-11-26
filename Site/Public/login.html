@@ -32,11 +32,11 @@
         <h2>Login</h2>
         <div class="conteudo_login">
             Usuário ou email: <br>
-                <input type="text" id="email_input" placeholder="Informe seu usuário"> <br>
+                <input type="text" id="input_email" placeholder="Informe seu usuário"> <br>
             Senha: <br>
-                <input type="text" id="senha_input" placeholder="Informe sua senha"> <br>
+                <input type="password" id="input_senha" placeholder="Informe sua senha"> <br>
                 <div id="mensagem_erro"></div>
-            <button class="botao" onclick="fazerLogin()">
+            <button class="botao" onclick="entrar()">
                 Login
             </button>
             <button class="nova_conta" onclick="fazerCadastro()">
@@ -46,5 +46,68 @@
     </div>
 </body>
 </html>
+
+<script>
+    function entrar() {
+        
+
+        var emailVar = input_email.value;
+        var senhaVar = input_senha.value;
+
+        
+
+        console.log("FORM LOGIN: ", emailVar);
+        console.log("FORM SENHA: ", senhaVar);
+
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+                    sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.NOME_USUARIO = json.nome;
+                    sessionStorage.ID_USUARIO = json.idUsuario;
+                });
+            
+                setTimeout(function () {
+                        window.location = "quiz.html";
+                    }, 1000); // apenas para exibir o loading
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                });
+
+                
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
+    }
+
+    
+function fazerCadastro(){
+    window.location.href = "cadastro.html"
+}
+</script>
 
    

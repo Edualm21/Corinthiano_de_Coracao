@@ -1,0 +1,162 @@
+body {
+  background: linear-gradient(to bottom, gray, black);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 98vh;
+  overflow-x: hidden
+}
+
+.header-left {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  height: 100%;
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  border-right: 3px solid #ffffff;
+  background-color: #222222;
+  text-align: center;
+}
+
+
+
+.header-left h1 {
+  color: #ffffff;
+}
+
+.hello {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.hello h3 {
+  color: #ffffff;
+  font-weight: 300;
+  font-size: 1.2rem;
+}
+
+.hello h3 span {
+  font-weight: 800;
+}
+
+.btn-nav {
+  width: 50%;
+  color: white;
+  background-color: #4f4e4e;
+  border-radius: 5px;
+  text-align: center;
+  padding: 2% 5%;
+  cursor: pointer;
+}
+
+.btn-nav-white {
+  width: 50%;
+  background-color: white;
+  border: 3px solid #000000;
+  border-radius: 5px;
+  text-align: center;
+  padding: 2% 5%;
+}
+
+.btn-nav-white h3 {
+  color: #000000;
+  padding: 0;
+  margin: 0;
+}
+
+.btn-nav h3,
+.btn-logout h3 {
+  margin: 0;
+  padding: 0;
+}
+
+.btn-logout {
+  margin: 0;
+  padding: 0;
+  width: 40%;
+  background-color: #ea2520;
+  color: white;
+  border-radius: 10px;
+  text-align: center;
+  padding: 10px 15px;
+  margin-bottom: 100px;
+  cursor: pointer;
+}
+
+.btn-logout:hover {
+  filter: brightness(0.8);
+  transform: scale(1.1);
+}
+
+.container-kpis {
+  margin-left: 20%; /* Ajustar para a largura do header-left */
+  display: flex; /* Flexbox para alinhar em linha */
+  justify-content: space-between; /* Espaçamento entre os elementos */
+  flex-wrap: wrap; /* Permitir quebra de linha se o espaço for insuficiente */
+  gap: 20px; /* Espaçamento entre os cards */
+  width: 80%; /* Reduzir para considerar o espaço ocupado pelo header-left */
+}
+
+
+.kpi1,
+.kpi2,
+.kpi3 {
+  background-color: antiquewhite;
+  padding: 30px;
+  border-radius: 5px;
+  width: 22%; /* Ajustar para caber na linha */
+  margin-bottom: 30px; /* Pode ser removido se os cards não quebrarem */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+  height: 150px;
+}
+
+.kpi1:hover,
+.kpi2:hover,
+.kpi3:hover {
+  border: 2px solid white;
+}
+
+.kpi1 span:first-child,
+.kpi2 span:first-child,
+.kpi3 span:first-child {
+  font-weight: bold;
+  
+}
+
+#top3Pontuadores {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#top3Pontuadores li {
+  margin-bottom: 5px;
+}
+
+.grafico {
+  margin-left: 20%; /* Considerar a largura do header-left */
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%; /* Espaço restante na tela */
+  height: 50vh; /* Ajuste conforme necessário (50% da altura da viewport) */
+  background-color: rgba(255, 255, 255, 0.1); /* Apenas para visualização */
+  border-radius: 10px; /* Deixa as bordas arredondadas */
+}
+
+#grafico canvas {
+  width: 100%; /* O canvas ocupa toda a largura disponível */
+  height: 100%; /* O canvas ocupa toda a altura disponível */
+}

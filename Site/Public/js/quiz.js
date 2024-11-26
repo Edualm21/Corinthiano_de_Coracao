@@ -54,7 +54,7 @@ function selecionarResposta(event) {
 
     if(respostaClicada.dataset.correct) {
         pontos++
-        document.getElementById("imagem").innerHTML = `<img src="assets/imgs/ronaldo_fenomeno.jpg">`
+        document.getElementById("imagem").innerHTML = `<img src="assets/imgs/Paulinho_contra_o_vasco2012.png">`
           document.getElementById("info-usuario").innerHTML = "Tá sabendo em!"
         } else {
           document.getElementById("imagem").innerHTML = `<img src="assets/imgs/yuri_triste.jpg">`
@@ -99,9 +99,45 @@ function finalizarQuiz() {
         <span>Restultado: ${mensagemFinal}</span></p> 
         <button onclick = window.location.reload() class = "button">
             Tentar Novamente        
+        </button>
+        <button onclick = cadastrarPontos(pontos) class = "button" id = "button_insert">
+            Ver dashboards
         </button>    
     `
 }
+
+function cadastrarPontos(pontos) {
+    const idUsuario = sessionStorage.getItem("ID_USUARIO"); // Usando o getItem corretamente
+    sessionStorage.setItem("Pontos", pontos); // Armazenando pontos no sessionStorage
+    
+    if (!idUsuario) {
+      console.error("ID do usuário não encontrado.");
+      return;
+    }
+    
+    fetch("/quiz/cadastrarPontos", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({pontos: pontos, idUsuario: idUsuario}),
+    })
+    .then((response) => response.json()) 
+    .then((data) => {
+      console.log("Resposta do servidor:", data);
+      if (data.error) {
+        console.error("Erro ao cadastrar pontos:", data.error);
+      } else {
+        console.log("Pontos cadastrados com sucesso:", data);
+      }
+    })
+    .catch((error) => {
+      console.error("Erro ao cadastrar pontos:", error);
+    });
+    window.location.href = `dashboard.html`
+  }   
+
+  
 
 
 
@@ -198,4 +234,7 @@ const listaDeQuestoes = [
             ]
         }
 ]
-    
+
+function irParaDash(){
+    window.location.href = "dashboard.html"
+}

@@ -39,7 +39,6 @@ function buscarMelhoresPontuadores() {
 
 
 module.exports = {
-    buscarPontuacao,
     buscarJogadoresPontuacoes,
     buscarMelhoresPontuadores
 }

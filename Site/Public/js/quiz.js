@@ -4,7 +4,7 @@ const resposta = document.querySelector(".respostas")
 const perguntas = document.querySelector(".pergunta")
 const proximaPergunta = document.querySelector(".next-question")
 
-startGameButton.addEventListener("click", startGame);
+startGameButton.addEventListener("click", startGame)
 proximaPergunta.addEventListener("click", nextQuestion)
 
 var perguntaAtual = 0

@@ -132,12 +132,6 @@ html{
     transform: scale(1.10);
 }
 
-
-
-
-
-
-
-
-
-
+#div_erros_login {
+    display: none
+}
